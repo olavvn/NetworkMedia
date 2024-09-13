@@ -1,0 +1,10 @@
+h1{
+    color: grey;
+    font-weight: bold;
+}
+h3{
+    color:green;
+    font-style: italic;
+    text-decoration: underline;
+}
+span{font-weight: bold; color: black;}
