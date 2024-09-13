@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Circle Enlarge Test</title>
+<style>
+#zoomControl {
+margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+
+<svg id="svgImage" width="1500" height="500">
+<!-- Circle with center at (50, 50), initial radius 40, and fill color blue -->
+<circle id="svgCircle" cx="100" cy="100" r="40" fill="blue" />
+</svg>
+
+
+<button id="zoomIn">Enlarge Circle</button>
+<button id="zoomOut">Shrink Circle</button>
+
+<script>
+const svgCircle = document.getElementById('svgCircle');
+let radius = 40; // initial radius of the circle
+
+document.getElementById('zoomIn').addEventListener('click', function() {
+radius += 10; // increase the radius by 10 units
+svgCircle.setAttribute('r', radius);
+});
+
+document.getElementById('zoomOut').addEventListener('click', function() {
+radius -= 10; // decrease the radius by 10 units
+if(radius < 0) radius = 0; // to make sure radius doesn't go negative
+svgCircle.setAttribute('r', radius);
+});
+</script>
+
+</body>
+</html>
